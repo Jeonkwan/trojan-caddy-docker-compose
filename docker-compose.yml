@@ -3,6 +3,7 @@ version: '3'
 services:
   trojan:
       image: jeonkwan/trojan
+      restart: always
       ports:
         - "443:443"
       volumes:
@@ -16,6 +17,7 @@ services:
 
   caddy:
       image: abiosoft/caddy
+      restart: always
       ports:
         - "80:80"
       volumes:
