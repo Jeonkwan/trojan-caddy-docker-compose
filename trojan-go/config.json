@@ -11,5 +11,8 @@
         "cert": "server.crt",
         "key": "server.key",
         "fallback_port": 1234
+    },
+    "mux": {
+        "enabled": true
     }
 }

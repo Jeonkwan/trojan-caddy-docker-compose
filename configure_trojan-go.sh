@@ -41,7 +41,7 @@ cat > ./trojan-go/config.json <<-EOF
         "cert": "$SSL_CERT_PATH",
         "key": "$SSL_KEY_PATH",
         "sni": "$your_domain"
-    }
+    },
     "mux": {
         "enabled": true
     }
