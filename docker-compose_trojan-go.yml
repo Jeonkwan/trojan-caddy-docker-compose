@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  trojan-go:
+      image: p4gefau1t/trojan-go
+      restart: always
+      ports:
+        - "443:443"
+      volumes:
+        - ./trojan-go/config.json
+        - ./ssl:/ssl
+      links:
+        - caddy:__DOCKER_CADDY__
+      depends_on: 
+        - caddy
+
+  caddy:
+      image: abiosoft/caddy
+      restart: always
+      ports:
+        - "80:80"
+      volumes:
+        - ./wwwroot:/usr/src
+        - ./caddy/Caddyfile:/etc/Caddyfile
+        - ./ssl:/root/.caddy/acme/acme-v02.api.letsencrypt.org/sites
