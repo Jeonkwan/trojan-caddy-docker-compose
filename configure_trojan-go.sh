@@ -2,7 +2,7 @@
 
 SAMPLE_RANDOM_PASS="my-uuid-string"
 SAMPLE_DOMAIN="placeholder.example.com"
-PINGPONG_HTML_URL="https://github.com/ofcyln/one-html-page-challenge/blame/master/entries/ping-pong.html"
+PINGPONG_HTML_URL="https://raw.githubusercontent.com/ofcyln/one-html-page-challenge/master/entries/ping-pong.html"
 
 read -r -p "Specify Trojan Pass: (e.g.: default random pass [${SAMPLE_RANDOM_PASS}])" trojan_passwd
 read -r -p "Specify Domain name: (e.g.: ${SAMPLE_DOMAIN})" DOMAIN_NAME
