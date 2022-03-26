@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-SAMPLE_RANDOM_PASS=$(uuid)
-SAMPLE_DOMAIN='placeholder.example.com'
+SAMPLE_RANDOM_PASS="my-uuid-string"
+SAMPLE_DOMAIN="placeholder.example.com"
 PINGPONG_HTML_URL="https://github.com/ofcyln/one-html-page-challenge/blame/master/entries/ping-pong.html"
 
 read -r -p "Specify Trojan Pass: (e.g.: default random pass [${SAMPLE_RANDOM_PASS}])" trojan_passwd
@@ -56,6 +56,3 @@ mkdir -p ./wwwroot/trojan
 echo "" > ./wwwroot/caddy.log
 curl $PINGPONG_HTML_URL -o ./wwwroot/trojan/index.html
 
-function run_trojan_go {
-    docker-compose -d -f docker-compose_trojan-go.yml up
-}
