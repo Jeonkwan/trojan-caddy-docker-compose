@@ -1,15 +1,14 @@
 version: '3'
 
 services:
-  trojan:
-      image: jeonkwan/trojan
+  trojan-go:
+      image: p4gefau1t/trojan-go
       restart: always
       ports:
         - "443:443"
       volumes:
-        - ./trojan/config:/config
+        - ./trojan-go:/etc/trojan-go
         - ./ssl:/ssl
-        - ./trojan/wait_for_caddy.sh:/wait_for_caddy.sh
       links:
         - caddy:__DOCKER_CADDY__
       depends_on: 
