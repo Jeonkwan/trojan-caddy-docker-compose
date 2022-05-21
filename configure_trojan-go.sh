@@ -4,22 +4,22 @@ SAMPLE_RANDOM_PASS="my-uuid-string-or-other-silly-words"
 SAMPLE_DOMAIN="placeholder.example.com"
 PINGPONG_HTML_URL="https://raw.githubusercontent.com/ofcyln/one-html-page-challenge/master/entries/ping-pong.html"
 
+[[ -z "${FULL_DOMAIN_NAME}" ]] && { read -r -p "Specify Domain name: (e.g.: ${SAMPLE_DOMAIN})" FULL_DOMAIN_NAME; }
 [[ -z "${TROJAN_PASSWORD}" ]] && { read -r -p "Specify Trojan Pass: (e.g.: default random pass [${SAMPLE_RANDOM_PASS}])" TROJAN_PASSWORD; }
-[[ -z "${DOMAIN_NAME}" ]] && { read -r -p "Specify Domain name: (e.g.: ${SAMPLE_DOMAIN})" DOMAIN_NAME; }
 
-SSL_DIR="/ssl/${DOMAIN_NAME}"
-SSL_CERT_PATH="${SSL_DIR}/${DOMAIN_NAME}.crt"
-SSL_KEY_PATH="${SSL_DIR}/${DOMAIN_NAME}.key"
+SSL_DIR="/ssl/${FULL_DOMAIN_NAME}"
+SSL_CERT_PATH="${SSL_DIR}/${FULL_DOMAIN_NAME}.crt"
+SSL_KEY_PATH="${SSL_DIR}/${FULL_DOMAIN_NAME}.key"
 
 echo "Generate Caddy file"
 mkdir -p ./caddy
 cat > ./caddy/Caddyfile <<-EOF
-${DOMAIN_NAME}:80 {
+${FULL_DOMAIN_NAME}:80 {
     root /usr/src/trojan
     log /usr/src/caddy.log
     index index.html
 }
-${DOMAIN_NAME}:443 {
+${FULL_DOMAIN_NAME}:443 {
     root /usr/src/trojan
     log /usr/src/caddy.log
     index index.html
@@ -41,7 +41,7 @@ cat > ./trojan-go/config.json <<-EOF
     "ssl": {
         "cert": "$SSL_CERT_PATH",
         "key": "$SSL_KEY_PATH",
-        "sni": "$DOMAIN_NAME"
+        "sni": "$FULL_DOMAIN_NAME"
     },
     "mux": {
         "enabled": true
