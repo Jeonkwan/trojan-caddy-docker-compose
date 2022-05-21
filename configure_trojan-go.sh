@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-SAMPLE_RANDOM_PASS="my-uuid-string"
+SAMPLE_RANDOM_PASS="my-uuid-string-or-other-silly-words"
 SAMPLE_DOMAIN="placeholder.example.com"
 PINGPONG_HTML_URL="https://raw.githubusercontent.com/ofcyln/one-html-page-challenge/master/entries/ping-pong.html"
 
-read -r -p "Specify Trojan Pass: (e.g.: default random pass [${SAMPLE_RANDOM_PASS}])" trojan_passwd
-read -r -p "Specify Domain name: (e.g.: ${SAMPLE_DOMAIN})" DOMAIN_NAME
-[[ -z $trojan_passwd ]] && { trojan_passwd="$SAMPLE_RANDOM_PASS"; }
-[[ -z $DOMAIN_NAME ]] && { DOMAIN_NAME="$SAMPLE_DOMAIN"; }
+[[ -z "${TROJAN_PASSWORD}" ]] && { read -r -p "Specify Trojan Pass: (e.g.: default random pass [${SAMPLE_RANDOM_PASS}])" TROJAN_PASSWORD; }
+[[ -z "${DOMAIN_NAME}" ]] && { read -r -p "Specify Domain name: (e.g.: ${SAMPLE_DOMAIN})" DOMAIN_NAME; }
 
 SSL_DIR="/ssl/${DOMAIN_NAME}"
 SSL_CERT_PATH="${SSL_DIR}/${DOMAIN_NAME}.crt"
@@ -38,7 +36,7 @@ cat > ./trojan-go/config.json <<-EOF
     "remote_addr": "caddy",
     "remote_port": 80,
     "password": [
-        "$trojan_passwd"
+        "$TROJAN_PASSWORD"
     ],
     "ssl": {
         "cert": "$SSL_CERT_PATH",
