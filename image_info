@@ -1,0 +1,88 @@
+[
+    {
+        "Id": "sha256:0213987ea3dacaa0d21cb95ada23d05a0268ee24f2ae9988a262148c389344d3",
+        "RepoTags": [
+            "p4gefau1t/trojan-go:latest"
+        ],
+        "RepoDigests": [
+            "p4gefau1t/trojan-go@sha256:05d55cda063b218aa968086ff91b68c425fa59db1a890391136c56af06374e66"
+        ],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2021-09-14T08:03:04.944446943Z",
+        "Container": "",
+        "ContainerConfig": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": null,
+            "Cmd": null,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/etc/trojan-go/config.json"
+            ],
+            "ArgsEscaped": true,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "/usr/local/bin/trojan-go",
+                "-config"
+            ],
+            "OnBuild": null,
+            "Labels": null
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 35159049,
+        "VirtualSize": 35159049,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/workspace/.docker-root/overlay2/362d9cb09a9813a30b74556aa6dc469db81e612304818a95e53d56dd85cc71ea/diff:/workspace/.docker-root/overlay2/8c47370fddeeba5e1e014bec1125ab04f0bdc2af1ddfc708f310cacd4450772d/diff:/workspace/.docker-root/overlay2/e6ff61428aa86bb478dec1e4b531ebf121febccc106c5f28e3c09fab87f89880/diff",
+                "MergedDir": "/workspace/.docker-root/overlay2/76fc26fb0995b60cdebc821cb89f63267a761b0ee2a165736d815d9fe69516df/merged",
+                "UpperDir": "/workspace/.docker-root/overlay2/76fc26fb0995b60cdebc821cb89f63267a761b0ee2a165736d815d9fe69516df/diff",
+                "WorkDir": "/workspace/.docker-root/overlay2/76fc26fb0995b60cdebc821cb89f63267a761b0ee2a165736d815d9fe69516df/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68",
+                "sha256:75d682f6cc08109ba8290f94c0d6d18c0cee27bde76bcf5e69cc73a92f23886c",
+                "sha256:cd2f633ec7abcda6e533ac59e34a68f09da27171626bccd952479205c5f43fcd",
+                "sha256:c5e3ede165f42855c5b7d454c38c8457e7d49d555ffe339d0f9ead1b586f69b4"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
