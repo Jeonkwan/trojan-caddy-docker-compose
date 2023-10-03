@@ -7,7 +7,7 @@ PINGPONG_HTML_URL="https://raw.githubusercontent.com/ofcyln/one-html-page-challe
 [[ -z "${FULL_DOMAIN_NAME}" ]] && { read -r -p "Specify Domain name: (e.g.: ${SAMPLE_DOMAIN})" FULL_DOMAIN_NAME; }
 [[ -z "${TROJAN_PASSWORD}" ]] && { read -r -p "Specify Trojan Pass: (e.g.: default random pass [${SAMPLE_RANDOM_PASS}])" TROJAN_PASSWORD; }
 
-SSL_DIR="/ssl/${FULL_DOMAIN_NAME}"
+SSL_DIR="/root/.caddy/acme/acme-v02.api.letsencrypt.org/sites/${FULL_DOMAIN_NAME}"
 SSL_CERT_PATH="${SSL_DIR}/${FULL_DOMAIN_NAME}.crt"
 SSL_KEY_PATH="${SSL_DIR}/${FULL_DOMAIN_NAME}.key"
 
@@ -20,9 +20,8 @@ ${FULL_DOMAIN_NAME}:80 {
     index index.html
 }
 ${FULL_DOMAIN_NAME}:443 {
-    root /usr/src/trojan
     log /usr/src/caddy.log
-    index index.html
+    reverse_proxy :443
 }
 EOF
 

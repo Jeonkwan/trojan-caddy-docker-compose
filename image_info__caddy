@@ -1,0 +1,132 @@
+[
+    {
+        "Id": "sha256:f2eece677796be745b1906e69bd011e89d5af224b16cd77c0b78e38f6bd3bfd4",
+        "RepoTags": [
+            "abiosoft/caddy:latest"
+        ],
+        "RepoDigests": [
+            "abiosoft/caddy@sha256:6f90597617b16108805ca30e4a7a1daaacf0a763110514560b9ca2dc3c3f4ca0"
+        ],
+        "Parent": "",
+        "Comment": "",
+        "Created": "2019-08-14T21:08:49.518220722Z",
+        "Container": "5dae6ec7f9ceb9844d34eb70262d33f0b518cc883c95cbc884c5d2692ee0c20b",
+        "ContainerConfig": {
+            "Hostname": "5dae6ec7f9ce",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "2015/tcp": {},
+                "443/tcp": {},
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "ACME_AGREE=false",
+                "ENABLE_TELEMETRY="
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"--conf\" \"/etc/Caddyfile\" \"--log\" \"stdout\" \"--agree=$ACME_AGREE\"]"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:773d343ee05555d4aa8388defac6aba7cdb200e9ce7c4317f8ea51d8608032dd",
+            "Volumes": {
+                "/root/.caddy": {},
+                "/srv": {}
+            },
+            "WorkingDir": "/srv",
+            "Entrypoint": [
+                "/bin/parent",
+                "caddy"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "caddy_version": "1.0.3",
+                "maintainer": "Abiola Ibrahim <abiola89@gmail.com>"
+            }
+        },
+        "DockerVersion": "18.03.1-ee-3",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "2015/tcp": {},
+                "443/tcp": {},
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "ACME_AGREE=false",
+                "ENABLE_TELEMETRY="
+            ],
+            "Cmd": [
+                "--conf",
+                "/etc/Caddyfile",
+                "--log",
+                "stdout",
+                "--agree=$ACME_AGREE"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:773d343ee05555d4aa8388defac6aba7cdb200e9ce7c4317f8ea51d8608032dd",
+            "Volumes": {
+                "/root/.caddy": {},
+                "/srv": {}
+            },
+            "WorkingDir": "/srv",
+            "Entrypoint": [
+                "/bin/parent",
+                "caddy"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "caddy_version": "1.0.3",
+                "maintainer": "Abiola Ibrahim <abiola89@gmail.com>"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 53283830,
+        "VirtualSize": 53283830,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/25b3236374314c695316e1ea69292da60335f11e8d7cfaeab824c6a73e0d548e/diff:/var/lib/docker/overlay2/52983f6a846432618bc68b539e040e4c2279cf3952de987227419a342ba0dc0b/diff:/var/lib/docker/overlay2/18ea4bdc88470191a58f97735dac382ee9571abf170c0a42cef8d407dd652281/diff:/var/lib/docker/overlay2/e0971e923d79fa9e1e3d0eebf3b4cfe1cb0cd6a0db96586f3c36eb6cbccbfeb2/diff:/var/lib/docker/overlay2/ff453dcba48b7e731a8bce8d86a630985e45e0e4b0ab2394fae27e5a837e901d/diff:/var/lib/docker/overlay2/d5a024c3cda831d6c2fec704a16be1680f8659c6a22883a45fb049fb71250886/diff",
+                "MergedDir": "/var/lib/docker/overlay2/ea93a29035794abde90742b0443ce8fd0d7d38d2c308a9f66064120aa3eeae5e/merged",
+                "UpperDir": "/var/lib/docker/overlay2/ea93a29035794abde90742b0443ce8fd0d7d38d2c308a9f66064120aa3eeae5e/diff",
+                "WorkDir": "/var/lib/docker/overlay2/ea93a29035794abde90742b0443ce8fd0d7d38d2c308a9f66064120aa3eeae5e/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:1bfeebd65323b8ddf5bd6a51cc7097b72788bc982e9ab3280d53d3c613adffa7",
+                "sha256:c70177a2591250627fd175138582391022fd8b81b5240e5cbecf1b9bf2b62c28",
+                "sha256:265935d82d28a5983f8a09865c7989bcaa6120500e5f183e9e77939395551d2c",
+                "sha256:ecf9cff80964a3942eb9286fd32b94ff54559a7a5498ac3ca0fd44b05e8644a5",
+                "sha256:67e6ce198b2fac10fa64f5ca0a6cf6c5dab22d6c16515524944cdc3efce3d7a8",
+                "sha256:585bda0cd2af4d1534ff8cff13ca92d13b21c6372fdb962ceb54f67d8c2b92eb",
+                "sha256:bd9b75d56f8511c471d09ea31fbaa7a8dd46e4bad37c4a35e0fa8e19dedb7232"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]

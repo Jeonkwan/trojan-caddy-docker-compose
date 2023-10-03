@@ -1,5 +1,12 @@
 #!/usr/bin/env sh
 
-TROJAN_DIR=/opt/trojan-go
+/usr/bin/caddy \
+    --conf /etc/Caddyfile \
+    --log stdout \
+    --agree=true &
 
-$TROJAN_DIR/trojan-go -config /etc/
+# wait for caddy
+sleep 5m
+
+/opt/trojan-go/trojan-go \
+    -config /etc/trojan-go/config.json

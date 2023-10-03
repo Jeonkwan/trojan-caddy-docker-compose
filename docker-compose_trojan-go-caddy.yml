@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  trojan-go-caddy:
+      image: jeonkwan/trojan-go-caddy
+      restart: always
+      ports:
+        - "443:443"
+        - "80:80"
+      volumes:
+        - ./trojan-go:/etc/trojan-go
+        - ./wwwroot:/usr/src
+        - ./caddy/Caddyfile:/etc/Caddyfile
+        - ./ssl:/root/.caddy/acme/acme-v02.api.letsencrypt.org/sites
+
