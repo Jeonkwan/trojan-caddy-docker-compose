@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   trojan-go:
       image: p4gefau1t/trojan-go
