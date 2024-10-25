@@ -1,3 +1,4 @@
 caddy/
 trojan-go/
 wwwroot/
+.DS_Store
